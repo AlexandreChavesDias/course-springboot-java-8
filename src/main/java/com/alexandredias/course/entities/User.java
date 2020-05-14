@@ -2,10 +2,18 @@ package com.alexandredias.course.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class User implements Serializable{
 
 	
 	private static final long serialVersionUID = 1L;
+	@Id //indica que o id é a pk do banco
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//pra dizer que a chave id é autoincrementavel no banco precisa dessa anotation
 	private Long id;
 	private String name;
 	private String email;
