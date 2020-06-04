@@ -11,14 +11,21 @@ import com.alexandredias.course.repositories.UserRepository;
 
 @Service
 public class UserService {
-	@Autowired//spring faz a injeção de dependencia 
+	@Autowired // spring faz a injeção de dependencia
 	private UserRepository repository;
-	
-	public List<User> findAll(){//repassa a chamada para o repository.findAll
+
+	public List<User> findAll() {// repassa a chamada para o repository.findAll
 		return repository.findAll();
-}
+	}
+
 	public User findById(Long id) {
-		Optional <User> obj = repository.findById(id);
+		Optional<User> obj = repository.findById(id);
 		return obj.get();
 	}
+	// Operação para salvar usuario no DB
+
+	public User insert(User obj) {
+		return repository.save(obj); // retorna o obj salvo
+	}
+
 }
