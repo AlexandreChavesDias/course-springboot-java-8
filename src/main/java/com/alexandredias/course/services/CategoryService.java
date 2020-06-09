@@ -11,7 +11,7 @@ import com.alexandredias.course.repositories.CategoryRepository;
 
 @Service
 public class CategoryService {
-	@Autowired//spring faz a injeção de dependencia 
+	@Autowired//injeção de dependencia 
 	private CategoryRepository repository;
 	
 	public List<Category> findAll(){//repassa a chamada para o repository.findAll

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.alexandredias.course.entities.User;
 import com.alexandredias.course.repositories.UserRepository;
+import com.alexandredias.course.resources.exceptions.ResourceExceptionHandler;
+import com.alexandredias.course.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class UserService {
@@ -20,7 +22,7 @@ public class UserService {
 
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);// findById busca no DB o objeto
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	// Operações DB
 

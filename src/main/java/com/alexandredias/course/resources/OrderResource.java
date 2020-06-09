@@ -13,7 +13,7 @@ import com.alexandredias.course.entities.Order;
 import com.alexandredias.course.services.OrderService;
 
 @RestController
-@RequestMapping(value = "/orders")
+@RequestMapping(value = "/orders")//uri pardão para acesso aos pedidos 
 public class OrderResource {
 	@Autowired
 	private OrderService service;
